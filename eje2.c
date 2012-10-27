@@ -7,8 +7,8 @@
 int valor;
 
 void nodo1();
-void nodo1_1();
-void nodo1_2();
+/*void nodo1_1();
+void nodo1_2();*/
 void nodo2();
 
 void main(int argc, char* argv[])
@@ -34,8 +34,7 @@ void nodo1()
 
 	if (pid == 0)
 	{
-		nodo1();
-		//nodo2();
+		
 	}
 	else
 	{
@@ -43,7 +42,7 @@ void nodo1()
 	}
 }
 
-/*void nodo2()
+void nodo2()
 {
 	printf("\nNodo 1 - PID: %d\n", getpid());
-}*/
+}
