@@ -1,8 +1,12 @@
+#include <fcntl.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 void main(int argc, char* argv[])
 {
-	int i, j;
+	int fd, i, j;
+	char* nombre_archivo;
 
 	if (argc == 1)
 	{
@@ -26,11 +30,14 @@ void main(int argc, char* argv[])
 					}
 					break;
 				case 's':
+					nombre_archivo = argv[2];
+					fd = open(nombre_archivo, O_CREAT + O_RDWR, 0777);
+					close(1);
+					dup(fd);
 					for (j = 0; j < argc; j++)
 					{
 						printf("%s ", argv[j]);
 					}
-					printf("\n");
 					break;
 			}
 			i++;
