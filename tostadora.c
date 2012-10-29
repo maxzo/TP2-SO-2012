@@ -14,19 +14,24 @@ int main()
 	signal(SIGUSR1, &tostarBlanco);
 	signal(SIGUSR2, &tostarNegro);
 		
-	while (tostadas != 30);
+	while (1)
+	{
+		pause();
+	}
 	
 	return 0;
 }
 
 void tostarBlanco(int sig)
 {
-	printf("Blanco\n");
-	tostadas++;
+	printf("Deseo tostadas de pan blanco.\nTostadas de pan blanco. (%d)\n", ++tostadas);
+	//sleep(2);
+	printf("Tostadas listas.\nTostadora libre, esperando pan.\n");
 }
 
 void tostarNegro(int sig)
 {
-	printf("Negro\n");
-	tostadas++;
+	printf("Deseo tostadas de pan negro.\nTostadas de pan negro. (%d)\n", ++tostadas);
+	//sleep(1);
+	printf("Tostadas listas.\nTostadora libre, esperando pan.\n");
 }
