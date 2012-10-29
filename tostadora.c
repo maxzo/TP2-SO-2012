@@ -8,7 +8,7 @@ void tostarBlanco(int sig, siginfo_t *siginfo, void *contexto);
 void tostarNegro(int sig, siginfo_t *siginfo, void *contexto);
 
 int tostadas = 0;
-//
+
 int main()
 {
 	struct sigaction accionB, accionN;
