@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 void funcion(int sig) { }
-//
+
 int main(int argc, char* argv[])
 {
 	signal(SIGUSR1, &funcion);
