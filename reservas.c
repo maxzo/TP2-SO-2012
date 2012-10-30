@@ -9,8 +9,9 @@
 void main(int argc, char* argv[])
 {
 	int fd;
-	int fw;
-	int vuelo = system("sed 's/$/_AR234/' pasajeros.txt> temp.txt");
+	int vuelo;
 	/* char id_vuelo[6] = "_AR234"; */
 	fd = open( "pasajeros.txt", O_RDWR | O_APPEND);
+	vuelo = system("sed 's/$/_AR234/' pasajeros.txt> temp.txt");
+	close(1);
 }
