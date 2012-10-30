@@ -1,17 +1,19 @@
-/* lee archivo pasajeros.txt y agrega id de vuelo al nombre de pasajero y codigo de reserva */
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
 
-#define RD_WR 0666
-
-void main(int argc, char* argv[])
+void main()
 {
-	int fd;
-	int asiento;
-	/* char id_vuelo[6] = "_AR234"; */
-	fd = open( "pasajeros.txt", O_RDWR | O_APPEND);
-	vuelo = system("sed 's/$/_AR234/' pasajeros.txt> temp.txt");
-	close(1);
+	char buffer[1];
+	int asiento = 1;
+	
+	while (read(0, buffer, 1) > 0)
+	{
+		if (buffer[0] == '\n')
+		{
+			printf("_%d\n", asiento++);
+		}
+		else
+		{
+			printf("%c", buffer[0]);
+		}
+	}
 }
